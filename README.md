@@ -29,6 +29,7 @@ How to install it?
 If you use Visual studio, you can simply add the dll as a reference in your project to use all the commands available.
 
 How to use it?
+
 First, you have to create a connection to a wallet:
 VB: Dim Mywallet As New Wavesdotnet.WalletConnection("Walletaddress","NodeIP",port)
 
