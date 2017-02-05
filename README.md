@@ -31,6 +31,7 @@ If you use Visual studio, you can simply add the dll as a reference in your proj
 How to use it?
 
 First, you have to create a connection to a wallet:
+
 VB: Dim Mywallet As New Wavesdotnet.WalletConnection("Walletaddress","NodeIP",port)
 
 Walletaddress: The wallet address you wish to connect to (for example 3PE9n5HRUsU6kjknatxPfvam7WmKy8EJcRW)
