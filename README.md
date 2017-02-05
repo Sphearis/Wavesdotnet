@@ -47,7 +47,7 @@ assetID: This is not the name but the unique ID. To find this ID, go into the po
 decimals: Number of decimals used by the token, used to get the correct value as tokens can get any amount of decimals when they are created.
 
 Simple VB.net webpage Example:
-
+```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -70,6 +70,6 @@ Simple VB.net webpage Example:
     </form>
 </body>
 </html>
-
+```
 To execute this example, you have to run a full node on the same server as the one used to host the webpage and enable rpc, or you can use another node but you have to replace "localhost" and 6869 accordingly.
 
