@@ -12,7 +12,7 @@ This dll will allow you to interact with the Waves blockchain from any asp .net 
 - Trade Waves and Tokens on the DEX (Decentralized Exchange)
 - ...
 
-This should be enough to get you started with integrating the Waves platform into your web projects. I made this as simple and useful as possible, you can test this with 3 lines of code(see the sample below)!
+This should be enough to get you started with integrating the Waves platform into your web projects. I made this as simple and useful as possible, you can test this with 3 lines of code(see the example below)!
 
 Possible uses are:
 - Adding a personal cryptocurrency to your website to use it as a reward or payment system
@@ -21,14 +21,14 @@ Possible uses are:
 - Transfer and store data securely, send messages on the blockchain(140 chars can be sent with any transaction)
 - Create a blockchain explorer or blockchain analysis tools
 
-How to install it?
+##How to install it?
 
 - If it doesn't exist yet, create a bin folder in the root of your web application and put the dll there
 - That's all
 
 If you use Visual studio, you can simply add the dll as a reference in your project to use all the commands available.
 
-How to use it?
+##How to use it?
 
 First, you have to create a connection to a wallet:
 
@@ -46,7 +46,7 @@ When the connection is made, you can use these commands(more to come):
 assetID: This is not the name but the unique ID. To find this ID, go into the portfolio section of your wallet and click on the "Details" button next to the Token you wish to know the balance, the value next to "Identifier" is what you're looking for. 
 decimals: Number of decimals used by the token, used to get the correct value as tokens can get any amount of decimals when they are created.
 
-Simple VB.net webpage Example:
+##Simple VB.net webpage Example
 ```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
