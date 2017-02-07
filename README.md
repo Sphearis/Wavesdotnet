@@ -32,7 +32,7 @@ If you use Visual studio, you can simply add the dll as a reference in your proj
 
 First, you have to create a connection to a wallet:
 
-VB: Dim Mywallet As New Wavesdotnet.WalletConnection("Walletaddress","NodeIP",port)
+VB: **Dim Mywallet As New Wavesdotnet.WalletConnection("Walletaddress","NodeIP",port)**
 
 Walletaddress: The wallet address you wish to connect to (for example 3PE9n5HRUsU6kjknatxPfvam7WmKy8EJcRW)
 NodeIP: You can input the public IP of any node with rpc enabled or localhost if you run your own node on the same server(rpc has to be enabled in the config file). For more information about running your own node, I found this tutorial to be the easiest to follow: https://www.cryptocompare.com/mining/guides/how-to-mine-waves/
