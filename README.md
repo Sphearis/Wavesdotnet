@@ -6,7 +6,7 @@ You can find more information about the Waves platform here: https://wavesplatfo
 This dll will allow you to interact with the Waves blockchain from any asp .net webpage or application, you'll be able to issue commands to your own node or to any external one with rpc enabled such as:
 - Check any Waves balance on a wallet (already included in this version)
 - Check any Token balance on a wallet (already included in this version)
-- Gather information about transactions and blocks
+- Gather information about transactions (already included in this version)
 - Transfer Waves or Tokens from one wallet to another
 - Issue or reissue Tokens
 - Trade Waves and Tokens on the DEX (Decentralized Exchange)
@@ -40,13 +40,18 @@ NodeIP: You can input the public IP of any node with rpc enabled or localhost if
 port: The node rpc port, default is 6869
 
 When the connection is made, you can use these commands(more to come):
-- Mywallet.GetWavesBalance() - Returns the waves balance of the connected wallet(as Double)
+- **Mywallet.GetWavesBalance()** - Returns the waves balance of the connected wallet(as Double)
 
-- Mywallet.GetAssetBalance("assetID",decimals) - Returns the specified asset balance of the connected wallet(as Double)
+- **Mywallet.GetAssetBalance("assetID",decimals)** - Returns the specified asset balance of the connected wallet(as Double)
 assetID: This is not the name but the unique ID. To find this ID, go into the portfolio section of your wallet and click on the "Details" button next to the Token you wish to know the balance, the value next to "Identifier" is what you're looking for. 
 decimals: Number of decimals used by the token, used to get the correct value as tokens can get any amount of decimals when they are created.
 
-##Simple VB.net webpage Example
+- (NEW) **Mywallet.Gettransactioninfo("TxID")** - Returns information about the transaction specified, informations available are type, id, sender, senderpublickey, recipient, assetid, amount, fee, timestamp, attachment, signature, height, name(for asset creation transactions) and description.
+For example, *Mywallet.Gettransactioninfo("566kvw3YVxKc9LPt2UxCCGcnK7DSRK7qWFF84YrDrGGA").recipient* returns the recipient of that transaction.
+
+- (NEW) **Mywallet.Getassetname("AssetID")** - Returns the specified asset name from its ID
+
+##Example
 ```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -71,5 +76,8 @@ decimals: Number of decimals used by the token, used to get the correct value as
 </body>
 </html>
 ```
-To execute this example, you have to run a full node on the same server as the one used to host the webpage and enable rpc, or you can use another node but you have to replace "localhost" and 6869 accordingly.
+
+More examples are available in the "Examples" folder.
+
+To run these, you have to run a full node on the same server(or development computer) as the one used to host the webpage and enable rpc, or you can use a node hosted on another server but you have to replace "localhost" and 6869 accordingly.
 
