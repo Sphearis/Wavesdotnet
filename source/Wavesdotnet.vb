@@ -12,8 +12,8 @@ Public Class WalletConnection
 
     Public Class Assetinfo
         Public Property assetID As String
-        Public Property balance As Double
-        Public Property issued As Boolean
+        Public AssetList As List(Of Assetinfo)
+        
     End Class
     Public Class Transactioninfo
         Public Property type As Integer
@@ -38,7 +38,7 @@ Public Class WalletConnection
         json = wc.DownloadString(rpcpath)
         Dim jss As New JavaScriptSerializer()
         Dim getinfowallet As WalletConnection = jss.Deserialize(Of WalletConnection)(json)
-        Dim getassetinfo As ArrayList = getinfowallet.balances
+        Dim getassetinfo As List(Of assetinfo) = getinfowallet.balances
         Return getassetinfo
     End Function
     Function Getassetname(AssetID As String)
