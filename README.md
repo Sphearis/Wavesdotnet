@@ -10,17 +10,17 @@ New in v0.1:
 
 You can find more information about the Waves platform here: https://wavesplatform.com/
 
-This dll will allow you to interact with the Waves blockchain from any asp .net webpage or application, you'll be able to issue commands to your own node or to any external one with rpc enabled such as:
+This framework will allow you to interact with the Waves blockchain from any asp .net webpage or application, you'll be able to issue commands to your own node or to any external one with rpc enabled such as:
 - Check any Waves balance on a wallet (already included in this version)
 - Check any Token balance on a wallet (already included in this version)
 - Getting any information about a transaction (already included in this version)
-- Getting the asset list (with assetid, name and balance) of a wallet (next update)
+- Getting the asset list (with assetid, name and balance) of a wallet (in the next update)
 - Transfer Waves or Tokens from one wallet to another
 - Issue or reissue Tokens
 - Trade Waves and Tokens on the DEX (Decentralized Exchange)
 - ...
 
-This should be enough to get you started with integrating the Waves platform into your web projects. I made this as simple and useful as possible, you can test this with 3 lines of code(see the example below)!
+This should be enough to get you started with integrating the Waves platform into your web projects. I made this as simple and useful as possible, you can test this with 3 lines of code!(see the example below)
 
 Possible uses are:
 - Adding a personal cryptocurrency to your website to use it as a reward or payment system
@@ -38,13 +38,13 @@ If you use Visual studio, you can simply add the two dlls as a reference in your
 
 ##How to use it?
 
-First, you have to create a connection to a wallet:
+First, you have to create a connection to a full node with rpc enabled:
 
 VB: **Dim Node1 As New Wavesdotnet.Node("NodeIPorUrl","rpcport")**
 C#: **Wavesdotnet.Node Node1 = new Wavesdotnet.Node("NodeIPorUrl","rpcport");**
 
 NodeIPorUrl: You can input the public IP or Url of any node with rpc enabled or localhost if you run your own node on the same server(rpc has to be enabled in the config file). 
-rpcport: The node rpc port
+rpcport: The node rpc port(default is 6869)
 
 For more information about running your own node, I found this tutorial to be the easiest to follow: https://www.cryptocompare.com/mining/guides/how-to-mine-waves/
 **Remark:** You don't have to get 10000 Waves to run your own full node, that's only for generating blocks(mining). You can use a node with a new empty wallet to run your projects.
