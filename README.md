@@ -3,10 +3,9 @@ Asp .net framework you can use to interact with the Wavesplatform in your asp.Ne
 
 New in v0.1:
 - First official version, commands will be kept as they're integrated right now. Nothing will be deprecated in the future(or kept as legacy commands if needed), you can now use and update the api without having to worry about updating your own code.
-- Coded in C# instead of VB
 - Commands based on a node connection instead of a wallet connection
 - Using newtonsoft.json for maximum performances http://www.newtonsoft.com/json (newtonsoft.json.dll must also be present in your web application \bin directory)
-- Library returns full objects to work with instead of simple variables, you're free to use Node.transactioninfo("txid").fee or Node.transactioninfo("txid").sender for example
+- Library returns full objects to work with instead of simple variables, you're free to use Node.TxInfo("txid").fee or Node.TxInfo("txid").sender for example
 - New examples available in the "examples" folder
 
 You can find more information about the Waves platform here: https://wavesplatform.com/
