@@ -1,5 +1,5 @@
 # Wavesdotnet v0.1
-Asp .net components to interact with the Wavesplatform
+Asp .net framework you can use to interact with the Wavesplatform in your asp.Net web pages or .Net apps
 
 New in v0.1:
 - First official version, commands will be kept as they're integrated right now. Nothing will be deprecated in the future(or kept as legacy commands if needed), you can now use and update the api without having to worry about updating your own code.
