@@ -1,5 +1,12 @@
-# Wavesdotnet v0.1
+# Wavesdotnet v0.2
 .Net framework you can use to interact with the Wavesplatform in your asp.Net web pages or .Net apps
+
+New in v0.2:
+- Make transactions on the Waves blockchain!
+- Send Waves and assets with 2 new commands(require access to a rpc enabled node with the wallet used to send any asset/Waves).
+- Generate an asset list for a wallet
+- Get Latest Block on a node
+- New Getassetlist example in the "examples" folder
 
 New in v0.1:
 - First official version, commands will be kept as they're integrated right now. Nothing will be deprecated in the future(or kept as legacy commands if needed), you can now use and update the api without having to worry about updating your own code.
@@ -14,8 +21,8 @@ This framework will allow you to interact with the Waves blockchain from any asp
 - Check any Waves balance on a wallet (already included in this version)
 - Check any Token balance on a wallet (already included in this version)
 - Getting any information about a transaction (already included in this version)
-- Getting the asset list (with assetid, name and balance) of a wallet (in the next update)
-- Transfer Waves or Tokens from one wallet to another
+- Getting the asset list (with assetid, name and balance) of a wallet (already included in this version)
+- Transfer Waves or Tokens from one wallet to another (already included in this version if you have a rpc enabled full node)
 - Issue or reissue Tokens
 - Trade Waves and Tokens on the DEX (Decentralized Exchange)
 - ...
@@ -51,6 +58,8 @@ For more information about running your own node, I found this tutorial to be th
 
 **If you run the command without any parameters, the default values of "localhost" and "6869"are used for NodeUrl and RPCPort respectively.**
 
+**If you only want to access the Waves blockchain data(such as Transactions data or Wallet balances for example), you can use the open Waves node by entering these parameters: NodeIPorUrl=nodes.wavesnodes.com rpcport=80** 
+
 When the connection is made, you can use these commands(more to come):
 - **Node1.ConnectionCheck()** - Returns "NodeIPorUrl:port" of the Node1 connection as a string
 - **Node1.GetWavesBalance("walletaddress")** - Returns the waves balance of the specified wallet address (as Double with corrected decimals)
@@ -64,6 +73,25 @@ decimals: Number of decimals of the token, used to get the correct value as toke
 For example, *Node1.TxInfo("566kvw3YVxKc9LPt2UxCCGcnK7DSRK7qWFF84YrDrGGA").recipient* returns the recipient of that transaction.
 
 - **Node1.GetAssetName("AssetID")** - Returns the specified asset name from its ID
+
+- **Node1.GetAssetList("walletaddress").balances** - Returns a list of the AssetsId stored into the wallet with the amount, quantity and reissuable flag that can be bound to a gridview/listview or converted to a dataset.
+
+- **Node1.Getlatestblock** - Returns the latest block of the Node, it can be used as a data to work with or to see if it's correctly synced.
+
+- **Node1.SendWaves("senderaddress", "recipientaddress", amount, "attachment", "apikey")** - Send Waves from the node wallet to any Waves wallet.
+	senderaddress: The node wallet.
+	recpientaddress: Any Waves wallet you wish to send to.
+	amount: In wavelets (0.00000001 Waves)
+	attachment: Must be Base58encoded(automatic encoding of strings will come in the next version)
+	apikey: Your unhashed api_key (not Base58 encoded, plain text)
+	
+- **Node1.SendAsset("AssetId","senderaddress", "recipientaddress", amount, "attachment", "apikey")** - Send any asset stored in the node wallet to any Waves wallet.
+	AssetID: The Asset unique Id (not the Asset name).
+	senderaddress: The node wallet.
+	recpientaddress: Any Waves wallet you wish to send to.
+	amount: In the smallest unit available(depending on decimals).
+	attachment: Must be Base58encoded(automatic encoding of strings will come in the next version)
+	apikey: Your unhashed api_key (not Base58 encoded, plain text)
 
 ##Example in VB
 ```
