@@ -1,5 +1,13 @@
-# Wavesdotnet v0.2
+# Wavesdotnet v0.5
 .Net framework you can use to interact with the Wavesplatform in your asp.Net web pages or .Net apps
+
+New in v0.5:
+- Classes cleanup, especially transaction type which has been standardized for all commands.
+- Added an optional backup node allowing you to add a second IP/RPC port to the node creation command in case the first node goes down temporarily
+- Added commands to analyze blocks(including generators and transactions), assets details and Dex transactions
+- Added a command to create a new address on your node
+- Added a command to see generating (active) balance including leases
+- Updated node communication to comply with the new 6.3 update format(application/json)
 
 New in v0.2:
 - Make transactions on the Waves blockchain!
@@ -92,6 +100,32 @@ For example, *Node1.TxInfo("566kvw3YVxKc9LPt2UxCCGcnK7DSRK7qWFF84YrDrGGA").recip
 	amount: In the smallest unit available(depending on decimals).
 	attachment: Must be Base58encoded(automatic encoding of strings will come in the next version)
 	apikey: Your unhashed api_key (not Base58 encoded, plain text)
+
+- **Node1.GetGeneratingBalance("walletaddress")** - Get active wallet balance(balance used to generate blocks including leases).
+	walletaddress: The node wallet.
+
+- **Node1.GetDistribution("AssetID")** - Returns a dictionary with the complete list of wallet addresses and balances for the specified asset.
+	AssetID: The Asset unique Id (not the Asset name).
+
+- **Node1.GetBlockhistory(start,end)** - Returns the blocks information(including all transactions, timestamp, generator and fees earned) of the specified blocks range.
+	start: The first block of the range.
+	end: The last block of the range.
+	
+- **Node1.GetBlocktxlist(blocknumber)** - Returns the list of transactions of the specified block with their details.
+	blocknumber: The block to analyse.
+	
+- **Node1.GetAssetInfos("AssetID")** - Returns an object containing all the details of the specified asset.
+	AssetID: The Asset unique Id (not the Asset name).
+	
+- **Node1.TxInfo("txID")** - Returns an object containing all the details of the specified transaction.
+	txID: The transaction Id.
+
+- **Node1.GetNodeStatus()** - Returns the current synchronizing/idle/generating flags of the node.
+
+- **Node1.CreateAddress("Apikey")** - Create a wallet address in the node and returns it.
+	apikey: Your unhashed api_key (not Base58 encoded, plain text)
+
+- **Node1.Getnodeaddresses()** - Returns the list of wallet addresses created on the node.
 
 ##Example in VB
 ```
